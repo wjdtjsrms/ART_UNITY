@@ -4,30 +4,25 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    Rigidbody Trashrigidbody;
+    Rigidbody TrashRigidbody;
     AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        Trashrigidbody = this.GetComponent<Rigidbody>();
+        TrashRigidbody = this.GetComponent<Rigidbody>();
         audioSource = this.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void useRigiBbody() // 쓰레기에게 물리처리를 하게 하는 메소드
     {
-
+        TrashRigidbody.useGravity = true;
+        TrashRigidbody.isKinematic = false;
     }
-    public void useRigiBbody()
-    {
-        Trashrigidbody.useGravity = true;
-        Trashrigidbody.isKinematic = false;
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Goal")) // 골이랑 충돌 후 처리
+        if (other.CompareTag("Goal")) // 쓰레기통 골인 이후 처리
         {
             GameManager.Instance.SetCount();
             audioSource.Play();

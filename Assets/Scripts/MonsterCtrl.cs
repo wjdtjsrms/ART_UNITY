@@ -52,12 +52,12 @@ public class MonsterCtrl : MonoBehaviour
             // 몬스터와 플레이어 사이의 거리 측정
             float dist = Vector3.Distance(playerTr.position, monsterTr.position);
 
-            if(dist <= attackDist && !GameManager.Instance.isGameOver)
+            if(dist <= attackDist )
             {
                 
                 monsterState = MonsterState.attack;
             }
-            else if(dist <= traceDist && !GameManager.Instance.isGameOver)
+            else if(dist <= traceDist)
             {
                 monsterState = MonsterState.trace;
             }
@@ -130,6 +130,5 @@ public class MonsterCtrl : MonoBehaviour
             coll.enabled = false;
         }
 
-        GameManager.Instance.GetScored(2);
     }
 }

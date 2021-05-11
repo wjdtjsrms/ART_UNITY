@@ -36,12 +36,7 @@ public class BulletSpawner : MonoBehaviour
         {
             timeAffterSpawn = 0f;
 
-            if(!GameManager.Instance.isGameOver)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-                bullet.transform.LookAt(target);
-                fireAudio.PlayOneShot(fireClip); // 발사 사운드 재생
-            }
+
 
             spwanRate = Random.Range(spwanRateMin, spwanRateMax);
         }
@@ -54,7 +49,6 @@ public class BulletSpawner : MonoBehaviour
         if(hp<0) // hp가 0보다 적어지면 사망한다.
         {
             gameObject.SetActive(false);
-            GameManager.Instance.GetScored(1);
         }
     }
 }

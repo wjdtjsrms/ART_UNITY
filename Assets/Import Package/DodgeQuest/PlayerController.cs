@@ -15,18 +15,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
-
     public void GetDamage(float amount)
     {
         hp -= amount;
@@ -41,14 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        GameManager.Instance.EndGame();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Punch"))
-        {
-            GetDamage(10.0f);
-        }
-    }
 }
