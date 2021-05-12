@@ -93,10 +93,10 @@ private MeshRenderer parkMat; // 매시 렌더러의 머터리얼
     {
         LeftTrashText.gameObject.SetActive(false);// ui 숨기기
         trashBin.gameObject.SetActive(false); // 쓰레기통 숨기기
-        //portal.gameObject.SetActive(true); // 포탈 보이게 하기
+        portal.gameObject.SetActive(true); // 포탈 보이게 하기
         bgm.clip = Park_Good_Audio; //브금 변경
         bgm.Play(); // 브금 실행
-        parkMat.material = Park_Good_Mat; // 월드 1 머터리얼 변경 
+        //parkMat.material = Park_Good_Mat; // 월드 1 머터리얼 변경 
     }
     public void RestartGame()
     {
