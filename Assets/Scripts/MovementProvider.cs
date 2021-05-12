@@ -48,13 +48,17 @@ public class MovementProvider : MonoBehaviour
 
     void CheckForInput()
     {
-        foreach(XRController controller in controllers)
+        if(!GameManager.Instance.Isworld_1) // Park에서는 움직일 수 없다.
         {
-            if(controller.enableInputActions) // 컨트롤러에서 액션이 발생했다면
+            foreach (XRController controller in controllers)
             {
-                CheckForMovement(controller.inputDevice);
+                if (controller.enableInputActions) // 컨트롤러에서 액션이 발생했다면
+                {
+                    CheckForMovement(controller.inputDevice);
+                }
             }
         }
+
     }
 
     void CheckForMovement(InputDevice device)

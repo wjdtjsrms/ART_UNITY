@@ -8,6 +8,7 @@ TagManager:
   - Goal
   - Hand
   - Portal Ignore
+  - MoveEnd
   layers:
   - Default
   - TransparentFX

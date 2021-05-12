@@ -40,7 +40,9 @@ public class FadeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.parkChangeEvent += Fade;
+        GameManager.Instance.ParkChangeEvent += Fade;
+        GameManager.Instance.MBCBadEvent += Fade;
+        GameManager.Instance.MBCGoodEvent += Fade;
     }
 
     // Update is called once per frame
