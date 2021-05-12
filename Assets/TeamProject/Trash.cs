@@ -24,7 +24,7 @@ public class Trash : MonoBehaviour
     {
         if (other.CompareTag("Goal")) // 쓰레기통 골인 이후 처리
         {
-            GameManager.Instance.SetCount();
+            GameManager.Instance.SetCount(); // 쓰래기 갯수를 하나 줄인다.
             audioSource.Play();
             Destroy(this.gameObject, 3f);
         }

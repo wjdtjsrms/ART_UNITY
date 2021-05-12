@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Material Park_Good_Mat;
 
-    private MeshRenderer parkMat; // 매시 렌더러의 머터리얼
+    [SerializeField]
+    private GameObject trashBin;
+    [SerializeField]
+    private GameObject portal;
+
+private MeshRenderer parkMat; // 매시 렌더러의 머터리얼
     #endregion
 
     public GameObject playerGameObject;
@@ -31,6 +37,9 @@ public class GameManager : MonoBehaviour
     private int count;
 
     private static GameManager instance;
+    public event Action parkChangeEvent;
+
+     
 
     #region 인스턴스 구현
     private void Awake()
@@ -63,6 +72,7 @@ public class GameManager : MonoBehaviour
         LeftTrash = GameObject.FindGameObjectsWithTag("Trash");
         count = LeftTrash.Length;
         parkMat = world.GetComponent<MeshRenderer>(); // 360_Park 메시 렌더를 가져온다
+        parkChangeEvent += () => Invoke("SetChange",2f); // 월드 변경 이벤트
     }
 
     void Update()
@@ -76,14 +86,17 @@ public class GameManager : MonoBehaviour
 
         if(count <= 0)
         {
-            SetChange();
+            parkChangeEvent?.Invoke();
         }
     }
     private void SetChange()
     {
-        bgm.clip = Park_Good_Audio;
-        bgm.Play();
-        parkMat.material = Park_Good_Mat;
+        LeftTrashText.gameObject.SetActive(false);// ui 숨기기
+        trashBin.gameObject.SetActive(false); // 쓰레기통 숨기기
+        //portal.gameObject.SetActive(true); // 포탈 보이게 하기
+        bgm.clip = Park_Good_Audio; //브금 변경
+        bgm.Play(); // 브금 실행
+        parkMat.material = Park_Good_Mat; // 월드 1 머터리얼 변경 
     }
     public void RestartGame()
     {
