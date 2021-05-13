@@ -59,12 +59,13 @@
     <Compile Include="Assets\Scripts\CustomController.cs" />
     <Compile Include="Assets\TeamProject\ImportTeamPackage\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\PortalTransitionObject.cs" />
+    <Compile Include="Assets\TeamProject\Script\GoFront.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\LayerManager.cs" />
     <Compile Include="Assets\Import Package\Gun\Modern Guns - Handgun\_Demo Assets\SimpleShoot.cs" />
     <Compile Include="Assets\Import Package\DodgeQuest\PlayerController.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Demo\Scripts\MovementLimiter.cs" />
-    <Compile Include="Assets\TeamProject\Sphere\ReverseNormals.cs" />
-    <Compile Include="Assets\TeamProject\Trash.cs" />
+    <Compile Include="Assets\TeamProject\ImportTeamPackage\Sphere\ReverseNormals.cs" />
+    <Compile Include="Assets\TeamProject\Script\Trash.cs" />
     <Compile Include="Assets\Scripts\MonsterCtrl.cs" />
     <Compile Include="Assets\Import Package\DodgeQuest\Bullet.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\MeshDeformer.cs" />
@@ -82,15 +83,17 @@
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\CameraExtensions.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\MainCameraLayerManager.cs" />
     <Compile Include="Assets\Scripts\MovementProvider.cs" />
-    <Compile Include="Assets\TeamProject\FadeScript.cs" />
+    <Compile Include="Assets\TeamProject\Script\FadeScript.cs" />
     <Compile Include="Assets\Scripts\MenuUI.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\DimensionChanger.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\Dimension.cs" />
+    <Compile Include="Assets\TeamProject\Script\Clock.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Demo\Scripts\ControllerGrabObject.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Demo\Scripts\ARKitPlacement.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\TeamProject\Clock.cs" />
-    <Compile Include="Assets\TeamProject\GoFront.cs" />
+    <Compile Include="Assets\TeamProject\Script\GameManager.cs" />
+    <Compile Include="Assets\TeamProject\Script\GameManager.Method.cs" />
+    <Compile Include="Assets\TeamProject\Script\MBC_Data.cs" />
+    <Compile Include="Assets\TeamProject\Script\Park_Data.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Import Package\Pocket Portal VR\Materials\PortalShader.shader" />
