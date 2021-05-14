@@ -18,8 +18,12 @@ public partial class GameManager : MonoBehaviour
 
         // 필요한 이벤트핸들러를 추가한다.
         ParkChangeEvent += () => Invoke("SetWorldChange", 2f);
+
         MBCBadEvent += SetMBC_Change;
+        MBCBadEvent += MBC_Bad_END;
+
         MBCGoodEvent += SetMBC_Change;
+        MBCGoodEvent += MBC_Good_END;
     }
 
     void Update()
@@ -98,6 +102,17 @@ public partial class GameManager : MonoBehaviour
             mbcAsset.WorldRenderer.material = mbcAsset.MbcBadMat;
         }
     }
+
+    private void MBC_Good_END()
+    {
+        mbcAsset.Blossom.gameObject.SetActive(true);
+    }
+
+    private void MBC_Bad_END()
+    {
+        // 아직은 없다.
+    }
+
 
     private void SetWorldChange() // 공원 -> MBC 이동 시 필요한 처리
     {

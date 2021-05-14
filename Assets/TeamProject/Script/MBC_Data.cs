@@ -15,6 +15,9 @@ public class MBC_Data : MonoBehaviour
     [SerializeField]
     private GameObject clock;
     [SerializeField]
+    private GameObject blossom;
+
+    [SerializeField]
     private MeshRenderer mbcWorldRenderer; // 머터리얼을 바꾸기 위한 월드의 메시렌더러
 
     #region 프로퍼티
@@ -52,6 +55,14 @@ public class MBC_Data : MonoBehaviour
         get
         {
             return clock;
+        }
+    }
+
+    public GameObject Blossom
+    {
+        get
+        {
+            return blossom;
         }
     }
     public MeshRenderer WorldRenderer
