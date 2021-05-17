@@ -8,13 +8,12 @@ using System;
 
 public partial class GameManager : MonoBehaviour
 {
+
+
     void Start()
     {
+        
         Isworld_1 = true;
-
-        // Trash Tag 가 달린 쓰레기 오브젝트을 전부 찾는다.
-        LeftTrash = GameObject.FindGameObjectsWithTag("Trash");
-        count = LeftTrash.Length;
 
         // 필요한 이벤트핸들러를 추가한다.
         ParkChangeEvent += () => Invoke("SetWorldChange", 2f);
@@ -24,7 +23,14 @@ public partial class GameManager : MonoBehaviour
 
         MBCGoodEvent += SetMBC_Change;
         MBCGoodEvent += MBC_Good_END;
+
+        buttonManager?.StartButton.onClick.AddListener(() => Invoke("LoadParkAsset",2f));
+        buttonManager?.HowToButton.onClick.AddListener(() => SetUI());
+
+
     }
+
+
 
     void Update()
     {
@@ -87,6 +93,7 @@ public partial class GameManager : MonoBehaviour
 
     private void SetMBC_Change()
     {
+
         // mbcData.Clock.gameObject.SetActive(false); 버그 있음
 
         if (isClean) // 쓰레기를 다 치웠을때
@@ -106,24 +113,17 @@ public partial class GameManager : MonoBehaviour
     private void MBC_Good_END()
     {
         mbcAsset.Blossom.gameObject.SetActive(true);
+        mbcAsset.EndingMent.gameObject.SetActive(true);
     }
 
     private void MBC_Bad_END()
     {
-        // 아직은 없다.
+        mbcAsset.EndingMent.gameObject.SetActive(true);
     }
 
 
     private void SetWorldChange() // 공원 -> MBC 이동 시 필요한 처리
     {
-        if (LeftTrash.Length != 0) // 다 치우지 못한 쓰래기가 남아있다면 없앤다.
-        {
-            foreach (GameObject obj in LeftTrash)
-            {
-                Destroy(obj);
-            }
-        }
-
         Isworld_1 = false; // 이제 world_2 이다.
         LeftTrashText.gameObject.SetActive(false);// ui 숨기기
 
@@ -137,5 +137,29 @@ public partial class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    private void LoadParkAsset()
+    {
+        bgm.clip = parkAsset.ParkBGM;
+        bgm.Play();
+        parkAsset.gameObject.SetActive(true);
+        startWorld.gameObject.SetActive(false);
+        buttonManager.gameObject.SetActive(false);
+        parkAsset.Portal.gameObject.SetActive(true);
+    }
+    void SetUI()
+    {
+        if (howToUI.gameObject.activeSelf)
+        {
+            howToUI.gameObject.SetActive(false);
+            buttonManager.StartButton.gameObject.SetActive(true);
+            buttonManager.HowToButton.gameObject.SetActive(true);
 
+        }
+        else
+        {
+            howToUI.gameObject.SetActive(true);
+            buttonManager.StartButton.gameObject.SetActive(false);
+            buttonManager.HowToButton.gameObject.SetActive(false);
+        }
+    }
 }

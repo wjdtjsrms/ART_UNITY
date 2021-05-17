@@ -43,6 +43,7 @@ public class FadeScript : MonoBehaviour
         GameManager.Instance.ParkChangeEvent += Fade;
         GameManager.Instance.MBCBadEvent += Fade;
         GameManager.Instance.MBCGoodEvent += Fade;
+        //ameManager.Instance.buttonManager.StartButton.onClick.AddListener(Fade);
     }
 
     // Update is called once per frame

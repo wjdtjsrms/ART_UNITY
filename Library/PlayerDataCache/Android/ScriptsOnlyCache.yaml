@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonManager
     - Clock
     - CustomController
     - Dimension
@@ -32,6 +33,7 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.Interaction.Toolkit.DeviceBasedSnapTurnProvider
     - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
     - UnityEngine.XR.Interaction.Toolkit.TeleportationProvider
+    - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
     - UnityEngine.XR.Interaction.Toolkit.XRController
     - UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor
     - UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable
@@ -55,6 +57,7 @@ ScriptsOnlyBuild:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -143,6 +146,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2842}
     - Class: 114
+      Script: {instanceID: 3010}
+    - Class: 114
       Script: {instanceID: 3204}
     - Class: 114
       Script: {instanceID: 3214}
@@ -183,7 +188,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 4272}
+    - Class: 114
+      Script: {instanceID: 4442}
+    - Class: 114
+      Script: {instanceID: 4518}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -205,6 +214,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -845,7 +856,7 @@ ScriptsOnlyBuild:
     className: XRGrabInteractable
   - hash:
       serializedVersion: 2
-      Hash: 2fc667d6ae3100e94aad96359f910fa6
+      Hash: 956b02d377dbf94718c907d3dd7447c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MBC_Data
@@ -983,7 +994,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 7e3659cf84611563548359ea2db7cd80
+      Hash: 04938ecc0e46560a144f29a2d2135658
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Park_Data
@@ -1151,6 +1162,12 @@ ScriptsOnlyBuild:
     className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
+      Hash: 9ccc6e278c251b3d7fba4a5920731698
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonManager
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1181,7 +1198,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 61598e07a6b766db00ff25256df964de
+      Hash: 6f3798d627d23dbac7025ae9801990c7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1248,4 +1265,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/DMC CONET/Desktop/ARTest.apk
+  playerPath: C:/Users/DMC CONET/Desktop/ART_UNITY.apk

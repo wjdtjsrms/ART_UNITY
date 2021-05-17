@@ -83,6 +83,7 @@
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\CameraExtensions.cs" />
     <Compile Include="Assets\TeamProject\Script\MBC_Data.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Scripts\MainCameraLayerManager.cs" />
+    <Compile Include="Assets\TeamProject\ImportTeamPackage\Petal Particles - Cherry Petals\Demo Scene\Script\DemoScene.cs" />
     <Compile Include="Assets\Scripts\MovementProvider.cs" />
     <Compile Include="Assets\TeamProject\Script\FadeScript.cs" />
     <Compile Include="Assets\Scripts\MenuUI.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="Assets\Import Package\Pocket Portal VR\Demo\Scripts\ControllerGrabObject.cs" />
     <Compile Include="Assets\Import Package\Pocket Portal VR\Demo\Scripts\ARKitPlacement.cs" />
     <Compile Include="Assets\TeamProject\Script\GameManager.cs" />
-    <Compile Include="Assets\TeamProject\ImportTeamPackage\Petal Particles - Cherry Petals\Demo Scene\Script\DemoScene.cs" />
+    <Compile Include="Assets\TeamProject\Script\ButtonManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Import Package\Pocket Portal VR\Materials\PortalShader.shader" />
